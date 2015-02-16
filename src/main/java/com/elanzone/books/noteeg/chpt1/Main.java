@@ -1,23 +1,28 @@
 package com.elanzone.books.noteeg.chpt1;
 
-import java.util.concurrent.TimeUnit;
+import java.util.Date;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        FileClock clock = new FileClock();
-        Thread thread = new Thread(clock);
-        thread.start();
+        DataSourcesLoader dsLoader = new DataSourcesLoader();
+        Thread dsThread = new Thread(dsLoader, "DataSourceLoader");
+
+        NetworkConnectionsLoader ncLoader = new NetworkConnectionsLoader();
+        Thread ncThread = new Thread(ncLoader, "NetworkConnectionsLoader");
+
+        dsThread.start();
+        ncThread.start();
 
         try {
-            TimeUnit.SECONDS.sleep(5);
+            dsThread.join();
+            ncThread.join();
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
 
-        thread.interrupt();
-
+        System.out.printf("Main: Configuration has been loaded: %s\n",new Date());
     }
 
 }
