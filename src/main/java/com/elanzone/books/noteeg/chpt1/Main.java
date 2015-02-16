@@ -6,12 +6,12 @@ public class Main {
 
     public static void main(String[] args) {
 
-        FileSearch searcher = new FileSearch("C:\\", "autoexec.bat");
-        Thread thread = new Thread(searcher);
+        FileClock clock = new FileClock();
+        Thread thread = new Thread(clock);
         thread.start();
 
         try {
-            TimeUnit.SECONDS.sleep(10);
+            TimeUnit.SECONDS.sleep(5);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
