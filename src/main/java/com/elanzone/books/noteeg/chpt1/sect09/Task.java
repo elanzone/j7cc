@@ -1,4 +1,4 @@
-package com.elanzone.books.noteeg.chpt1.sect9;
+package com.elanzone.books.noteeg.chpt1.sect09;
 
 public class Task implements Runnable {
 

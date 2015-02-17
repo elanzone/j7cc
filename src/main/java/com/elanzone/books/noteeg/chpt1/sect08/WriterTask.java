@@ -1,4 +1,4 @@
-package com.elanzone.books.noteeg.chpt1.sect8;
+package com.elanzone.books.noteeg.chpt1.sect08;
 
 import java.util.Deque;
 import java.util.concurrent.TimeUnit;
