@@ -25,6 +25,9 @@
 
 ### 实现
 
+*本节的示例代码在 com.elanzone.books.noteeg.chpt2.sect04 package中*
+
+
 * 数据类 (EventStorage)
 
     * 属性 maxSize : int 类型

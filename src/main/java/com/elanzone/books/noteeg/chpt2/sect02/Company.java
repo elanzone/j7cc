@@ -1,4 +1,4 @@
-package com.elanzone.books.noteeg.chpt2.sect01;
+package com.elanzone.books.noteeg.chpt2.sect02;
 
 
 public class Company implements Runnable {

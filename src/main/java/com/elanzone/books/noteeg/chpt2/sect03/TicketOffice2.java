@@ -1,4 +1,4 @@
-package com.elanzone.books.noteeg.chpt2.sect02;
+package com.elanzone.books.noteeg.chpt2.sect03;
 
 
 public class TicketOffice2 implements Runnable {

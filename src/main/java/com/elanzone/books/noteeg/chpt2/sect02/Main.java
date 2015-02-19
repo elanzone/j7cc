@@ -1,28 +1,30 @@
 package com.elanzone.books.noteeg.chpt2.sect02;
 
+
 public class Main {
 
     public static void main(String[] args) {
-        Cinema cinema = new Cinema();
+        Account account = new Account();
+        account.setBalance(1000);
 
-        TicketOffice1 office1 = new TicketOffice1(cinema);
-        Thread thread1 = new Thread(office1, "TicketOffice1");
+        Company company = new Company(account);
+        Thread companyThread = new Thread(company);
 
-        TicketOffice2 office2 = new TicketOffice2(cinema);
-        Thread thread2 = new Thread(office2, "TicketOffice2");
+        Bank bank = new Bank(account);
+        Thread bankThread = new Thread(bank);
 
-        thread1.start();
-        thread2.start();
+        System.out.printf("Account : Initial Balance: %f\n", account.getBalance());
+        companyThread.start();
+        bankThread.start();
 
         try {
-            thread1.join();
-            thread2.join();
+            companyThread.join();
+            bankThread.join();
+            System.out.printf("Account : Final Balance: %f\n", account.getBalance());
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
 
-        System.out.printf("Room 1 Vacancies: %d\n",cinema.getVacanciesCinema1());
-        System.out.printf("Room 2 Vacancies: %d\n",cinema.getVacanciesCinema2());
     }
 
 }
