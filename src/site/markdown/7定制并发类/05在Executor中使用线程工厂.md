@@ -1,0 +1,57 @@
+在一个 Executor 对象中使用定制的 ThreadFactory
+====
+
+在前一节中，实现了 ThreadFactory 接口来生成定制的线程，介绍了工厂模式并提供了一个例子，
+展示了如何通过实现 ThreadFactory 接口来实现一个线程工厂。
+
+Executor 框架此机制能让您分离线程的创建和执行。
+它基于 Executor 和 ExecutorService 接口，以及实现这2个接口的 ThreadPoolExecutor 类。
+它有个内部的线程池并提供方法让您提交各种任务使其在线程池中执行。这些任务是：
+
+* Runnable 接口以实现不返回结果的任务
+* Callable 接口以实现返回结果的任务
+
+Executor 框架使用一个 ThreadFactory 接口来创建线程。
+
+
+### 任务
+
+实现您自己的线程类，线程工厂来创建该类的线程。并在一个 executor 中使用该工厂，这样 executor 将执行您的线程。
+
+
+### 实现
+
+*本节的示例代码在 com.elanzone.books.noteeg.chpt7.sect05 package中*
+
+* 复制上一节的 MyTask, MyThread, MyThreadFactory 类
+
+* 控制类 : Main
+    1. 创建一个 MyThreadFactory 对象 factory
+    2. 使用 Executors 的 newCachedThreadPool() 方法创建一个 ExecutorService, 参数传递 MyThreadFactory 对象
+    3. 创建一个 MyTask 对象 task
+    4. 调用 executor 的 submit() 方法提交任务
+    5. 调用 executor 的 shutdown() 方法停止 executor，并调用 awaitTermination() 方法等待任务执行完
+    6. 输出结束信息
+
+            MyThreadFactory factory=new MyThreadFactory("MyThreadFactory");
+
+            ExecutorService executor = Executors.newCachedThreadPool(factory);
+
+            MyTask task = new MyTask();
+            executor.submit(task);
+
+            executor.shutdown();
+            try {
+                executor.awaitTermination(1, TimeUnit.DAYS);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
+            System.out.printf("Main: End of the example.\n");
+
+
+### 讲解
+
+在 main() 方法中，使用 Executors 的 newCachedThreadPool() 方法创建了一个 Executor 对象。
+传递之前创建的定制的工厂对象作为参数，这样创建的 Executor 对象将使用此工厂来创建需要的线程，将执行 MyThread 类的线程。
+

@@ -18,6 +18,8 @@ public class MyThread extends Thread {
         setStartDate();
         super.run();
         setFinishDate();
+
+        System.out.printf("%s\n", this);
     }
 
     public long getExecutionTime() {
