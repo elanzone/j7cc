@@ -19,7 +19,7 @@
 *本节的示例代码在 com.elanzone.books.noteeg.chpt7.sect08 package中*
 
 
-* 定制工作任务类: MyWorkerTask : extends ForkJoinTask<Void>
+* 定制工作任务类: MyWorkerTask : extends ForkJoinTask\<Void\>
     <br/>
     无返回，故泛型参数为 Void
 

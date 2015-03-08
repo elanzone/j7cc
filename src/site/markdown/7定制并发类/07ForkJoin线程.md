@@ -29,7 +29,7 @@ Fork/Join 框架的主类是 ForkJoinPool 类。在内部，它有以下两个�
 
 * 工作线程类：MyWorkerThread ：extends ForkJoinWorkerThread
 
-    * 静态属性 taskCounter ：ThreadLocal<Integer> 对象 ：用来统计线程执行的任务数
+    * 静态属性 taskCounter ：ThreadLocal\<Integer\> 对象 ：用来统计线程执行的任务数
     * 构造函数
 
                 private static ThreadLocal<Integer> taskCounter = new ThreadLocal<Integer>();
@@ -77,7 +77,7 @@ Fork/Join 框架的主类是 ForkJoinPool 类。在内部，它有以下两个�
                     return new MyWorkerThread(pool);
                 }
 
-* Recursive 任务类 : MyRecursiveTask : extends RecursiveTask<Integer>
+* Recursive 任务类 : MyRecursiveTask : extends RecursiveTask\<Integer\>
 
     * 属性：int数组（模拟将要处理的数据数组）array 及起始值 start、结束值 end
     * 构造函数将各属性初始化为参数值

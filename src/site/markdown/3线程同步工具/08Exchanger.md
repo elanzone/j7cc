@@ -1,4 +1,4 @@
-在并发任务间修改数据
+在并发任务间交换数据
 ====
 
 Java concurrency API 提供了一个同步工具可在2个并发任务间交换数据。Exchanger 类允许在 2 个线程间定义一个同步点。
@@ -20,8 +20,8 @@ Java concurrency API 提供了一个同步工具可在2个并发任务间交换�
 
 * 生产者线程 : Producer
 
-    * 属性 buffer : List<String> 对象, 将被交换的数据结构
-    * 属性 exchanger : final Exchanger<List<String>> 对象, 用于同步生产者和消费者的交换对象
+    * 属性 buffer : List\<String\> 对象, 将被交换的数据结构
+    * 属性 exchanger : final Exchanger\<List\<String\>\> 对象, 用于同步生产者和消费者的交换对象
     * 在构造函数中初始化上述2个属性
 
             private List<String> buffer;
@@ -131,7 +131,7 @@ Java concurrency API 提供了一个同步工具可在2个并发任务间交换�
 Exchanger 类有另一个版本的 exchange 方法:
 
 * exchange(V data, long time, TimeUnit unit)
-    * V : 在 Exchanger 声明内用作一个参数的类型（本例是 List<String>）
+    * V : 在 Exchanger 声明内用作一个参数的类型（本例是 List\<String\>）
     * 线程将睡眠，直到:
         * 被中断
         * 另一个线程到达

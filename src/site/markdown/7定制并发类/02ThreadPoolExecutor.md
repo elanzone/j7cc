@@ -24,7 +24,7 @@ Executor框架此机制能让您分离线程的创建和执行。
 
 * ThreadPoolExecutor 扩展类 ：MyExecutor
 
-    * 属性 startTimes : ConcurrentHashMap<String, Date> 对象 : 记录线程池中线程的hash值与启动时间
+    * 属性 startTimes : ConcurrentHashMap\<String, Date\> 对象 : 记录线程池中线程的hash值与启动时间
     * 在构造函数中初始化属性
 
                 private ConcurrentHashMap<String, Date> startTimes;
@@ -89,7 +89,7 @@ Executor框架此机制能让您分离线程的创建和执行。
                 }
 
 
-* Callable<String> 类 : SleepTwoSecondsTask
+* Callable\<String\> 类 : SleepTwoSecondsTask
 
     * call() 方法： 睡上 2 秒后将当前时间转成字符串返回
 

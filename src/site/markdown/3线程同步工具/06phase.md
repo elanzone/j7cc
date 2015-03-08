@@ -1,7 +1,7 @@
-运行并发分阶段的任务
+运行并发阶段性任务
 ====
 
-使用 Phaser 类来执行并发分阶段任务的能力是Java concurrency API提供的最复杂、强大的功能之一。
+使用 Phaser 类来执行并发阶段性任务的能力是Java concurrency API提供的最复杂、强大的功能之一。
 此机制在当我们有一些并发任务被分成很多步时有用。Phaser 类使我们可以在每一步骤结束点同步各线程，
 所有线程都完成第一步时，才会开始执行第二步。
 
@@ -25,7 +25,7 @@
 
     * 属性 initPath : String 对象；在此文件夹及子文件夹中查找
     * 属性 end : String 对象; 待查找文件以 end 结尾
-    * 属性 results : List<String> 对象; 文件查找的结果字符串列表, 结果为文件的全路径
+    * 属性 results : List\<String\> 对象; 文件查找的结果字符串列表, 结果为文件的全路径
     * 属性 phaser : Phaser 对象; 控制任务不同步骤的同步
     * 构造函数 : 初始化各属性, 参数有 initPath, end, phaser
 

@@ -31,7 +31,7 @@
 * 数据类 (EventStorage)
 
     * 属性 maxSize : int 类型
-    * 属性 storage : LinkedList<Date>
+    * 属性 storage : LinkedList\<Date\>
 
         private int maxSize;
         private List<Date> storage;

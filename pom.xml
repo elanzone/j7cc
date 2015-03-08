@@ -6,8 +6,8 @@
     <artifactId>concurrency</artifactId>
     <version>1.0.x</version>
 
-    <name>Java Concurrency</name>
-    <url>http://books.elanzone.com/jc</url>
+    <name>Java 7 并发编程指南</name>
+    <url>http://books.elanzone.com/j7cc</url>
     <inceptionYear>2001</inceptionYear>
 
     <distributionManagement>

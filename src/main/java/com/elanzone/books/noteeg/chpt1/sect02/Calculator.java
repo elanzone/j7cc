@@ -1,4 +1,4 @@
-package com.elanzone.books.noteeg.chpt1;
+package com.elanzone.books.noteeg.chpt1.sect02;
 
 public class Calculator implements Runnable {
 
